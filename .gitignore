@@ -37,3 +37,7 @@ yarn-error.log*
 # Cypress
 cypress/videos
 cypress/screenshots
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
