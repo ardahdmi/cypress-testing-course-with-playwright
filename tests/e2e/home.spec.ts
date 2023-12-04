@@ -51,3 +51,28 @@ test.describe("home page content", () => {
     await expect(homeFeatures.nth(2)).toHaveText("Free and Open Source")
   })
 })
+
+test.describe.only("Courses section", async () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto("http://localhost:3000")
+  })
+
+  test("Course: Testing Your First Next.js Application", async ({ page }) => {
+    const course = getByTestData(page, "course-0")
+    await course.getByRole("link", { name: "Get started" }).click()
+    expect(new URL(page.url()).pathname).toBe("/testing-your-first-application")
+  })
+
+  test("Course: Testing Foundations", async ({ page }) => {
+    const course = getByTestData(page, "course-1")
+    await course.getByRole("link", { name: "Get started" }).click()
+    expect(page.url()).toBe("http://localhost:3000/testing-foundations")
+  })
+
+  test("Course: Cypress Fundamentals", async ({ page }) => {
+    const course = getByTestData(page, "course-2")
+    await course.getByRole("link", { name: "Get started" }).click()
+    const pathname = new URL(page.url()).pathname
+    expect(pathname).toBe("/cypress-fundamentals")
+  })
+})
