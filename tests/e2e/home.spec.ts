@@ -52,7 +52,7 @@ test.describe("home page content", () => {
   })
 })
 
-test.describe.only("Courses section", async () => {
+test.describe("Courses section", async () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("http://localhost:3000")
   })
