@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test"
 import { getByTestData } from "testUtils"
 
-test.describe.only("newsletter form", () => {
+test.describe("newsletter form", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("http://localhost:3000")
   })
