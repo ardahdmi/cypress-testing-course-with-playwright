@@ -6,7 +6,7 @@ import { test, expect } from "@playwright/test"
 // 4. They read the lesson and complete the quiz at the bottom.
 // 5. After answering the quiz correctly, they click on the “Next Lesson” button and are taken to the next lesson.
 
-test.describe.only("User Journey", () => {
+test.describe("User Journey", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("http://localhost:3000")
   })
